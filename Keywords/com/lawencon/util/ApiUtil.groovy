@@ -17,6 +17,8 @@ import com.kms.katalon.core.testobject.ObjectRepository
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
+
+import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 import internal.GlobalVariable
 
@@ -37,12 +39,36 @@ import com.kms.katalon.core.util.KeywordUtil
 
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+
 class ApiUtil {
 
 	@Keyword
-	def getToken(String ro) {
-		JsonSlurper slurper = new JsonSlurper()
-		Map parsedJson = slurper.parseText(ro)
-		return parsedJson.get("token")
+	def setToken(def variable) {
+		for(def datas in variable.properties.getAt("allData")) {
+			try {
+				setToken(datas[0], datas[1])
+			} catch (Exception e) {
+				e.printStackTrace()
+			}
+		}
+	}
+
+	@Keyword
+	def setToken(String username, String pass) {
+		String token = GlobalVariable.token
+		if(token.equals("")) {
+			def response = WS.sendRequest(findTestObject('API/Login/POST Login',
+					["data": JsonOutput.toJson(["username":username, "userPassword":pass])]))
+
+			def check = WS.verifyResponseStatusCode(response, 200, FailureHandling.CONTINUE_ON_FAILURE)
+
+			if(check) {
+				JsonSlurper slurper = new JsonSlurper()
+				Map parsedJson = slurper.parseText(response.properties.get("responseText"))
+
+				GlobalVariable.token = parsedJson.get("token")
+			}
+		}
 	}
 }
