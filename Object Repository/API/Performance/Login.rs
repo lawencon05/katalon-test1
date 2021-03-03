@@ -10,7 +10,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;username\&quot; : \&quot;student\&quot;,\n  \&quot;userPassword\&quot;:\&quot;12345678\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;${data}&quot;,
   &quot;contentType&quot;: &quot;text/plain&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -41,6 +41,13 @@
       <id>0a0dbbc6-50b8-47d9-9831-00313abbbc83</id>
       <masked>false</masked>
       <name>host</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d9faf463-14ac-4220-a99e-73f7ceb60cd4</id>
+      <masked>false</masked>
+      <name>data</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

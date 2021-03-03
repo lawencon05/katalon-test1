@@ -15,15 +15,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.Keys
+
+import groovy.json.JsonOutput
 import groovy.json.JsonSlurper as JsonSlurper
 
-response = WS.sendRequest(findTestObject('API/Performance/Login'))
+for(def datas in data.properties.getAt("allData")) {
+	response = WS.sendRequest(findTestObject('API/Performance/Login', 
+		["data": JsonOutput.toJson(["username":datas[0], "userPassword":datas[1]])]))	
+	WS.verifyResponseStatusCode(response, 200)
+}
 
-WS.verifyResponseStatusCode(response, 200)
-
-token = CustomKeywords.'com.lawencon.util.ApiUtil.getToken'(response.properties.get('responseText'))
-GlobalVariable.token = token
-
-println(token)
+//
+//token = CustomKeywords.'com.lawencon.util.ApiUtil.getToken'(response.properties.get('responseText'))
+//GlobalVariable.token = token
+//
+//println(token)
 

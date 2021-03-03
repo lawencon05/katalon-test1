@@ -5,4 +5,11 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>1125b1c8-c4f5-4b14-a722-b1276db378af</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Performance/TD_Login')</defaultValue>
+      <description></description>
+      <id>d4769fbc-b087-425d-adde-943eaf6473b0</id>
+      <masked>false</masked>
+      <name>data</name>
+   </variable>
 </TestCaseEntity>

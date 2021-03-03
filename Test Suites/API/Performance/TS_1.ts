@@ -16,6 +16,12 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/API/Performance/TC_Login</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>d4769fbc-b087-425d-adde-943eaf6473b0</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>74cad59d-4b5a-488d-ba8d-9fe545733762</guid>
