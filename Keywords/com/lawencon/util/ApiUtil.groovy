@@ -71,7 +71,7 @@ class ApiUtil {
 			}
 		}
 	}
-	
+
 	@Keyword
 	def extractResponse(response) {
 		return response.properties.get("responseText")

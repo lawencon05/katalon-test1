@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Login_Invalid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d9e6aeca-dbaf-49a8-a8f9-9eab585eee86</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Data Invalid/Login/TD_Login_Student')</defaultValue>
+      <description></description>
+      <id>3fcd6a3d-1400-43ed-aa8a-e1401a183019</id>
+      <masked>false</masked>
+      <name>dataLogin</name>
+   </variable>
+</TestCaseEntity>

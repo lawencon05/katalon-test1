@@ -1,25 +1,46 @@
 Feature: Login feature
-  This is a sample login feature
+  This is a login feature
 
-  @success
-  Scenario Outline: Test login success feature
-    Given User open browser and navigates to Login Page
-    When User input "<username>" and "<password>"
-    Then System validates it and User navigates to Home Page
+  @valid_admin
+  Scenario Outline: Login with valid username and password
+    When User opens The Browser
+    Then navigates to Home Page
+    When click a masuk menu
+    Then navigates to Login Page
+    When input a valid <username> and <password>
+    And click a masuk button
+    Then navigates to The Dashboard Page Admin
 
     Examples: 
       | username | password |
       | admin01  | 12345678 |
 
-  @failed
-  Scenario Outline: Test login failed feature
-    Given User open browser and navigates to Login Page
-    When User input "<username>" and "<password>"
-    Then System validates it and User navigates to Home Page
+  @valid_student
+  Scenario Outline: Login with valid username and password
+    When User opens The Browser
+    Then navigates to Home Page
+    When click a masuk menu
+    Then navigates to Login Page
+    When input a valid <username> and <password>
+    And click a masuk button
+    Then navigates to The Dashboard Page Student
 
     Examples: 
       | username | password |
-      | name2    |        7 |
-      | name2    |          |
-      |          |        7 |
-      |          |          |
+      | student  | 12345678 |
+
+  @invalid
+  Scenario Outline: Test login failed feature
+    When User opens The Browser
+    Then navigates to Home Page
+    When click a masuk menu
+    Then navigates to Login Page
+    When input a invalid <username> and <password>
+    Then still in Login Page
+
+    Examples: 
+      | username | password |
+      | salah    | salah    |
+      | salah    | [blank]  |
+      | [blank]  | salah    |
+      | [blank]  | [blank]  |

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Profile without login</description>
+   <name>TC_Profile_Invalid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>44c37046-2ed6-4f30-a0f2-115a587ba7f1</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Data Invalid/Profile/TD_Profile')</defaultValue>
+      <description></description>
+      <id>ec361e98-d66b-4ed1-bf01-1e31dfd50ace</id>
+      <masked>false</masked>
+      <name>dataProfile</name>
+   </variable>
+</TestCaseEntity>

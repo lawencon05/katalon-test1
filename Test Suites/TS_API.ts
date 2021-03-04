@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_API</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunImmediately>false</rerunImmediately>
+   <testSuiteGuid>95555bbd-966f-4027-8d74-6f1af2ea1c04</testSuiteGuid>
+   <testCaseLink>
+      <guid>25fcfb69-f8ab-4eea-ad65-9cc78810bf31</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/API/Login/Admin/TC_Login_Invalid</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>94b0b1b2-aa8f-4d1a-a7fd-9aba19d88b0d</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>5e9ab238-ce22-4fd4-89cc-e9adca1f94e6</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/API/Login/Admin/TC_Login_Valid</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>d4769fbc-b087-425d-adde-943eaf6473b0</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>3fcf7359-f1f7-4ed4-8f85-f5333c768a42</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/API/Login/Student/TC_Login_Invalid</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>3fcd6a3d-1400-43ed-aa8a-e1401a183019</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>393790a5-7575-47a9-a35e-6c80611cc0db</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/API/Login/Student/TC_Login_Valid</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>ae72c9c4-4c6f-46a7-89b3-f926b74dacc8</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

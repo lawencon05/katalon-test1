@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Login_Valid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a363ba75-c929-4aeb-866a-47c841f7256c</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Data Valid/Login/TD_Login_Student')</defaultValue>
+      <description></description>
+      <id>ae72c9c4-4c6f-46a7-89b3-f926b74dacc8</id>
+      <masked>false</masked>
+      <name>dataLogin</name>
+   </variable>
+</TestCaseEntity>
