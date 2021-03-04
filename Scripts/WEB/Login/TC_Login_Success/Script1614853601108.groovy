@@ -17,10 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('API/Login/TC_Login_Success'), [('dataLogin') : findTestData('Data Success/Login/TD_Login')], 
-    FailureHandling.STOP_ON_FAILURE)
+not_run: WebUI.openBrowser('')
 
-for (def datas : dataProfile.properties.getAt('allData')) {
-    response = WS.sendRequest(findTestObject('API/Student/Profile/GET Profile', ['id': datas[0]]))
-    WS.verifyResponseStatusCode(response, 200)
-}
+not_run: WebUI.navigateToUrl('http://localhost:90')
+
+not_run: WebUI.click(findTestObject('WEB/Login/menu masuk'))
+
+not_run: WebUI.setText(findTestObject('WEB/Login/input username'), 'admin01')
+
+not_run: WebUI.setEncryptedText(findTestObject('WEB/Login/input password'), 'RigbBhfdqOBGNlJIWM1ClA==')
+
+not_run: WebUI.click(findTestObject('WEB/Login/button masuk'))
+
+
+CucumberKW.runFeatureFile('Include/features/Login/Login.feature')
+

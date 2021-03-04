@@ -17,7 +17,20 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-response = WS.sendRequest(findTestObject('API/Student/Profile/GET Profile'))
+'test without login'
+for (def datas : dataProfile.properties.getAt('allData')) {
+    response = WS.sendRequest(findTestObject('API/Student/Profile/GET Profile', [('id') : datas[0]]))
 
-WS.verifyResponseStatusCode(response, 401)
+    WS.verifyResponseStatusCode(response, 401, FailureHandling.CONTINUE_ON_FAILURE)
+}
+
+WebUI.callTestCase(findTestCase('API/Login/TC_Login_Success'), [('dataLogin') : findTestData('Data Success/Login/TD_Login')], 
+    FailureHandling.STOP_ON_FAILURE)
+
+'test with success login but wrong value'
+for (def datas : dataProfile.properties.getAt('allData')) {
+    response = WS.sendRequest(findTestObject('API/Student/Profile/GET Profile', [('id') : datas[0]]))
+
+    WS.verifyResponseStatusCodeInRange(response, 400, 500, FailureHandling.CONTINUE_ON_FAILURE)
+}
 

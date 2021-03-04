@@ -22,7 +22,7 @@
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>${host}/user/a93ab66e-6046-47ce-927c-b4bc85c0f73d</restUrl>
+   <restUrl>${host}/user/${id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -44,6 +44,13 @@
       <id>10243be4-f6f1-4f0e-9b52-97ec959f7c2b</id>
       <masked>false</masked>
       <name>host</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5ad469ce-55d5-4cd9-9cc0-651de8b78178</id>
+      <masked>false</masked>
+      <name>id</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

@@ -28,5 +28,11 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/API/Student/Profile/TC_Profile_Failed</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>ec361e98-d66b-4ed1-bf01-1e31dfd50ace</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>
