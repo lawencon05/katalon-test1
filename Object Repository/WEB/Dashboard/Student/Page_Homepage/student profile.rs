@@ -6,12 +6,12 @@
    <elementGuidId>cea1a7f7-edb1-47f6-8bc9-636ed3339c22</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='navbarSupportedContent']/ul[2]/li/div/a[2]</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>a.dropdown-item.ng-star-inserted</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[@id='navbarDropdown']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

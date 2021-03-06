@@ -18,11 +18,13 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonOutput as JsonOutput
 import groovy.json.JsonSlurper as JsonSlurper
+import com.lawencon.util.ApiUtil as ApiUtil
 
 for (def datas : dataLogin.properties.getAt('allData')) {
-    def response = WS.sendRequest(findTestObject('API/Login/POST Login', [('data') : JsonOutput.toJson([('username') : datas[0], ('userPassword') : datas[1]])]))
+    def response = WS.sendRequest(findTestObject('API/Login/POST Login', [('data') : datas[0]]))
+
     WS.verifyResponseStatusCode(response, 200)
-	
-	//set token for global
-    CustomKeywords.'com.lawencon.util.ApiUtil.setToken'(dataLogin)
+
+    //set token for global
+    new ApiUtil().setToken(dataLogin)
 }

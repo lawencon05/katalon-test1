@@ -1,4 +1,5 @@
 package com.lawencon.util
+
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -43,18 +44,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 
 class ApiUtil {
 
-	@Keyword
 	def setToken(def variable) {
 		for(def datas in variable.properties.getAt("allData")) {
 			try {
-				setToken(datas[0], datas[1])
+				def data = convertToJsonMap(datas)
+				setToken(data.username, data.userPassword)
 			} catch (Exception e) {
 				e.printStackTrace()
 			}
 		}
 	}
 
-	@Keyword
 	def setToken(String username, String pass) {
 		String token = GlobalVariable.token
 		if(token.equals("")) {
@@ -72,8 +72,18 @@ class ApiUtil {
 		}
 	}
 
-	@Keyword
 	def extractResponse(response) {
 		return response.properties.get("responseText")
+	}
+
+	def convertToJsonStr(def data) {
+		JsonSlurper slurper = new JsonSlurper()
+		Map parsedJson = slurper.parseText(data)
+		return JsonOutput.toJson(parsedJson)
+	}
+
+	def convertToJsonMap(def data) {
+		JsonSlurper slurper = new JsonSlurper()
+		return slurper.parseText(data)
 	}
 }

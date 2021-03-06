@@ -15,12 +15,12 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys
-
-import groovy.json.JsonOutput
+import org.openqa.selenium.Keys as Keys
+import groovy.json.JsonOutput as JsonOutput
 import groovy.json.JsonSlurper as JsonSlurper
 
 for (def datas : dataLogin.properties.getAt('allData')) {
-    def response = WS.sendRequest(findTestObject('API/Login/POST Login', [('data') : JsonOutput.toJson([('username') : datas[0], ('userPassword') : datas[1]])]))
-    WS.verifyResponseStatusCode(response, 401)
+    def response = WS.sendRequest(findTestObject('API/Login/POST Login', [('data') : datas[0]]))
+
+    WS.verifyResponseStatusCode(response, 401, FailureHandling.CONTINUE_ON_FAILURE)
 }

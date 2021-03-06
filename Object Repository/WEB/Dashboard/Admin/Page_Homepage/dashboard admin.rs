@@ -6,12 +6,12 @@
    <elementGuidId>a2c81e5f-a3dc-4dde-8d5f-0dd2390193e2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>(.//*[normalize-space(text()) and normalize-space(.)='WEDEMY'])[1]/following::div[5]</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>div.mat-list-item-content</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//mat-list-item/div</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

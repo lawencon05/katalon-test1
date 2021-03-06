@@ -21,7 +21,7 @@ class Login {
 		WebUI.navigateToUrl('http://localhost:90')
 	}
 
-	@When("click a masuk menu")
+	@When("click masuk menu")
 	def clickMasukMenu() {
 		WebUI.click(findTestObject('WEB/Login/menu masuk'))
 	}
@@ -29,7 +29,7 @@ class Login {
 	@When("navigates to Login Page")
 	def navigateToLoginPage() {}
 
-	@When("input a valid (.*) and (.*)")
+	@When("input valid (.*) and (.*)")
 	def setUsernameAndPassValid(String username, String password) {
 		username = valInput(username)
 		password = valInput(password)
@@ -38,12 +38,12 @@ class Login {
 		WebUI.setText(findTestObject('WEB/Login/input password'), password)
 	}
 
-	@When("input a invalid (.*) and (.*)")
+	@When("input invalid (.*) and (.*)")
 	def setUsernameAndPassInvalid(String username, String password) {
 		setUsernameAndPassValid(username, password)
 	}
 
-	@And("click a masuk button")
+	@And("click masuk button")
 	def clickMasukButton() {
 		WebUI.click(findTestObject('WEB/Login/button masuk'))
 	}
@@ -51,19 +51,20 @@ class Login {
 	@Then("navigates to The Dashboard Page Admin")
 	def navigateToDashboardPageAdmin() {
 		WebUI.verifyElementPresent(findTestObject('WEB/Dashboard/Admin/Page_Homepage/dashboard admin'), 5)
+		WebUI.closeBrowser()
 	}
 
 	@Then("navigates to The Dashboard Page Student")
 	def navigateToDashboardPageStudent() {
-		def test = WebUI.verifyElementPresent(findTestObject('WEB/Dashboard/Admin/Page_Homepage/dashboard admin'), 5)
-		println(test)
-//		WebUI.verifyElementPresent(findTestObject('WEB/Dashboard/Student/Page_Homepage/student profile'), 5)
+		def test = WebUI.verifyElementPresent(findTestObject('WEB/Dashboard/Student/Page_Homepage/student profile'), 5)
+		WebUI.closeBrowser()
 	}
 
 	@Then("still in Login Page")
 	def stillInLoginPage() {
 		WebUI.delay(5)
 		WebUI.verifyElementPresent(findTestObject('WEB/Login/box login'), 1)
+		WebUI.closeBrowser()
 	}
 
 	def valInput(def val) {

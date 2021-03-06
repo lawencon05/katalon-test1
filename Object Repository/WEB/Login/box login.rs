@@ -6,12 +6,12 @@
    <elementGuidId>3d7f419a-e4c7-4de2-9aeb-fefd276a64d2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='content-wrap']/div</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>div.row.shadow.p-3.mb-5.bg-white.rounded</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='content-wrap']/div</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

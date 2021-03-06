@@ -19,8 +19,10 @@ import org.openqa.selenium.Keys
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper as JsonSlurper
+import com.lawencon.util.ApiUtil
 
 for (def datas : dataLogin.properties.getAt('allData')) {
-    def response = WS.sendRequest(findTestObject('API/Login/POST Login', [('data') : JsonOutput.toJson([('username') : datas[0], ('userPassword') : datas[1]])]))
-    WS.verifyResponseStatusCode(response, 401)
+    def response = WS.sendRequest(findTestObject('API/Login/POST Login', [('data') : datas[0]]))
+
+    WS.verifyResponseStatusCode(response, 401, FailureHandling.CONTINUE_ON_FAILURE)
 }
